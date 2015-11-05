@@ -1,0 +1,14 @@
+### I want to get a whole bunch of genbank sequences.  Batch Entrez is a great way to do this.
+### I am grabbing sequences from a single publication. They are in an Excel file, which I think is pretty common!
+### The excel file has individuals by row and loci by column. I saved the .xls file as a .csv 
+### Batch Entrez takes a single file with one GI or accession number per line
+
+
+### The "awk" command in the bash shell can be used to parse a .csv file and has a lot of other functions.
+### "awk program input-file" where program is your commands or a program file (with the -f flag)
+### there can be multiple input files, or you can use stdin (type it in)
+
+### All of my accession numbers start with "JN"
+awk '/JN/ { print $0 }' mmc2.csv # prints whole line, i want just the fields
+
+
